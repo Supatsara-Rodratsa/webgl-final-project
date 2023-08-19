@@ -1,4 +1,3 @@
-import GUI from "lil-gui";
 import "./App.css";
 import { BedroomScene } from "./components/BedroomScene";
 import { InteractiveScene } from "./components/InteractiveScene";
