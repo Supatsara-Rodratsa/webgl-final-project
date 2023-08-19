@@ -26,7 +26,9 @@ svg text {
   fill: black;
   stroke: #fff;
   stroke-width: 2px;
-  animation: animated-stroke 4s, animated-fill 4s;
+  animation:
+    animated-stroke 4s,
+    animated-fill 4s;
   text-anchor: middle;
 }
 
