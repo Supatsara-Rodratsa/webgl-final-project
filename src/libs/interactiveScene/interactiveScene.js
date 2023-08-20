@@ -46,7 +46,7 @@ export default class InteractiveSceneInit {
       this.fov,
       window.innerWidth / window.innerHeight,
       1,
-      1000,
+      1000
     );
     this.camera.position.z = 48;
 
@@ -88,7 +88,7 @@ export default class InteractiveSceneInit {
   initModel() {
     // Load Model
     GL.load("models/shrek_hip_hop_dance.glb", (model) => {
-      this.initSnowFlex();
+      this.initSnowFlake();
       this.model = model.scene;
       this.model.position.z += 10;
       this.model.scale.setScalar(1.8);
@@ -119,7 +119,7 @@ export default class InteractiveSceneInit {
     // Load Floor Texture
     const texture = TL.load(
       "/textures/floor/floor_tiles_06_diff_1k.jpg",
-      (v) => (v.colorSpace = THREE.SRGBColorSpace),
+      (v) => (v.colorSpace = THREE.SRGBColorSpace)
     );
     const normal = TL.load("/textures/floor/floor_tiles_06_nor_gl_1k.jpg");
     const rough = TL.load("/textures/floor/floor_tiles_06_rough_1k.jpg");
@@ -159,7 +159,7 @@ export default class InteractiveSceneInit {
 
     // Light Helper
     const directionalLightHelper = new THREE.DirectionalLightHelper(
-      this.directionalLight,
+      this.directionalLight
     );
     this.directionalLightHelper = directionalLightHelper;
     // this.scene.add(this.directionalLightHelper);
@@ -176,7 +176,7 @@ export default class InteractiveSceneInit {
         if (this.activeElement?.name === "Object_8") {
           this.activeElement.material.color.set(0xea06c0);
           this.points.material.uniforms.uColor2.value = new THREE.Color(
-            0xea06c0,
+            0xea06c0
           );
           gsap.to(this.activeElement.parent.scale, {
             x: 1.2,
@@ -197,7 +197,7 @@ export default class InteractiveSceneInit {
           }
           this.activeElement.material.color.set(0xffffff);
           this.points.material.uniforms.uColor2.value = new THREE.Color(
-            0xffffff,
+            0xffffff
           );
         }
         this.activeElement = undefined;
@@ -205,7 +205,7 @@ export default class InteractiveSceneInit {
     }
   }
 
-  initSnowFlex() {
+  initSnowFlake() {
     const g = new THREE.BufferGeometry();
     const posArr = [];
     const shiftArr = [];
@@ -226,15 +226,15 @@ export default class InteractiveSceneInit {
 
     const positionAttribute = new THREE.BufferAttribute(
       new Float32Array(posArr),
-      3,
+      3
     );
     const timeShiftAttribute = new THREE.BufferAttribute(
       new Float32Array(shiftArr),
-      1,
+      1
     );
     const scaleAttribute = new THREE.BufferAttribute(
       new Float32Array(scaleArr),
-      1,
+      1
     );
 
     g.setAttribute("position", positionAttribute);
